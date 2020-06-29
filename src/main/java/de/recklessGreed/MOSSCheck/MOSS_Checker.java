@@ -10,13 +10,20 @@ public class MOSS_Checker {
     public static MOSS_Checker instance;
     MOSS_StartUp startScreen;
 
+    private static final String NAME    = "MOSSChecker";
+    private static final String VERSION = "v0.1";
+
     public MOSS_Checker()
     {
         instance = this;
-        //JOptionPane.showMessageDialog(null, "Hello", "Hello", 1);        
-        openMainFrame();
+        try {
+            startScreen = new MOSS_StartUp();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //initialize();
-        startScreen.close();
+        openMainFrame();
+        //startScreen.close();
     }
 
     public static MOSS_Checker getInstance() {
@@ -28,10 +35,14 @@ public class MOSS_Checker {
     }
 
     private void openMainFrame() {
-        try {
-            startScreen = new MOSS_StartUp();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+    }
+
+    public String getName() {
+        return NAME;
+    }
+
+    public String getVersion() {
+        return VERSION;
     }
 }
