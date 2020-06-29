@@ -8,14 +8,15 @@ import java.io.IOException;
 public class MOSS_Checker {
 
     public static MOSS_Checker instance;
-    MOSS_StartUp folderSelector;
+    MOSS_StartUp startScreen;
 
     public MOSS_Checker()
     {
         instance = this;
-        //JOptionPane.showMessageDialog(null, "Hello", "Hello", 1);
-        //initialize();
+        //JOptionPane.showMessageDialog(null, "Hello", "Hello", 1);        
         openMainFrame();
+        //initialize();
+        startScreen.close();
     }
 
     public static MOSS_Checker getInstance() {
@@ -28,7 +29,7 @@ public class MOSS_Checker {
 
     private void openMainFrame() {
         try {
-            folderSelector = new MOSS_StartUp();
+            startScreen = new MOSS_StartUp();
         } catch (IOException e) {
             e.printStackTrace();
         }

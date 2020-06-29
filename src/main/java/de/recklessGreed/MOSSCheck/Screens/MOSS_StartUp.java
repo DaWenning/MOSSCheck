@@ -12,16 +12,22 @@ public class MOSS_StartUp {
     private JLabel headerLabel;
     private JLabel imageLabel;
 
+    private JFrame rootFrame;
+
     public MOSS_StartUp() throws IOException {
-        JFrame frame = new JFrame();
-        frame.setSize(400,400);
-        frame.setContentPane(this.rootPanel);
+        rootFrame = new JFrame();
+        rootFrame.setSize(400,400);
+        rootFrame.setContentPane(this.rootPanel);
         headerLabel.setText("Hello World");
 
-        frame.setVisible(true);
+        rootFrame.setVisible(true);
     }
 
     private void createUIComponents() {
 
+    }
+
+    public void close() {
+        rootFrame.setVisible(false);
     }
 }
